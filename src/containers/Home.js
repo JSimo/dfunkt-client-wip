@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { fetchMandatesIfNeeded } from '../actions';
 import { connect } from 'react-redux'
+import MandateTable from '../components/MandateTable';
 
 import './home.css';
 import skold from '../../public/skold.png';
@@ -33,10 +34,7 @@ class Home extends Component {
         <img className="spin-logo" alt="loading" src={skold}/>
         <h2> last fetched: {lastUpdated} </h2>
         <h2> isfetching: {isFetching ? "yes" : "no"} </h2>
-        <p>
-          {JSON.stringify(mandates)}
-          {JSON.stringify(this.props)}
-        </p>
+        <MandateTable mandates={mandates} />
       </div>
     );
   }
