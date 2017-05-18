@@ -7,6 +7,8 @@ import TableBody from 'react-md/lib/DataTables/TableBody';
 import TableRow from 'react-md/lib/DataTables/TableRow';
 import TableColumn from 'react-md/lib/DataTables/TableColumn';
 
+import { Link } from 'react-router-dom';
+
 const active = m => m.active; //to filter out all not active posts.
 
 const MandateTable = ({mandates}) => (
@@ -14,20 +16,20 @@ const MandateTable = ({mandates}) => (
     <TableHeader>
       <TableRow>
         <TableColumn>Title</TableColumn>
-        <TableColumn>Grupp</TableColumn>
-        <TableColumn>E-post</TableColumn>
         <TableColumn>Nuvarande innehavare</TableColumn>
+        <TableColumn>E-post</TableColumn>
+        <TableColumn>Grupp</TableColumn>
       </TableRow>
     </TableHeader>
     <TableBody>
       {mandates.filter(active).map((mandate, i) =>
-        <TableRow key={i}>
+        <TableRow key={mandate.title}>
           <TableColumn>{mandate.title}</TableColumn>
-          <TableColumn>{mandate.Group.name}</TableColumn>
-          <TableColumn>{mandate.email}</TableColumn>
           <TableColumn>{mandate.Mandates.map((m, j) =>
-              <p key={i+''+j}> {m.User.first_name + ' ' +  m.User.last_name} </p>
+              <Link key={mandate.title+m.User.kthid}to={"/user/" + m.User.kthid}> {m.User.first_name + ' ' +  m.User.last_name} </Link>
             )}</TableColumn>
+          <TableColumn>{mandate.email}</TableColumn>
+          <TableColumn>{mandate.Group.name}</TableColumn>
         </TableRow>
       )}
     </TableBody>

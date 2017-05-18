@@ -21,20 +21,22 @@ class Home extends Component {
   }
 
   render() {
-    const { mandates, isFetching, lastUpdated } = this.props
-    //const isEmpty = mandates.length === 0
+    const { mandates, isFetching /*, lastUpdated*/ } = this.props
+    const isEmpty = mandates.length === 0
     return (
       <div className="home">
         <div className="home-header">
           <h2>Welcome to dfunkt</h2>
         </div>
         <p className="home-intro">
-          TODO: system description system description system description
+          TODO: system description
         </p>
-        <img className="spin-logo" alt="loading" src={skold}/>
-        <h2> last fetched: {lastUpdated} </h2>
-        <h2> isfetching: {isFetching ? "yes" : "no"} </h2>
-        <MandateTable mandates={mandates} />
+        {isEmpty
+          ? (isFetching ? <img className="spin-logo" alt="loading" src={skold}/> : <h2>Empty.</h2>)
+          : <div style={{ opacity: isFetching ? 0.5 : 1 }}>
+              <MandateTable mandates={mandates} />
+            </div>
+        }
       </div>
     );
   }
