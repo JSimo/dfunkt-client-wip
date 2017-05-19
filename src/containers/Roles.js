@@ -2,8 +2,10 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { fetchRolesIfNeeded } from '../actions/role';
 import { connect } from 'react-redux'
+import RoleList from '../components/RoleList';
 
 import skold from '../../public/skold.png';
+
 
 class Roles extends Component {
   static propTypes = {
@@ -27,7 +29,7 @@ class Roles extends Component {
         {isEmpty
           ? (isFetching ? <img className="spin-logo" alt="loading" src={skold}/> : <h2>Empty.</h2>)
           : <div style={{ opacity: isFetching ? 0.5 : 1 }}>
-              <p> {JSON.stringify(roles)} </p>
+              <RoleList roles={roles} />
             </div>
         }
       </div>
