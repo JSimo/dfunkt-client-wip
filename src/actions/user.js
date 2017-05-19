@@ -13,7 +13,7 @@ export const receiveUserInfo = (json) => ({
   receivedAt: Date.now()
 });
 
-export const invalidateReddit = () => ({
+export const invalidateUserInfo = () => ({
   type: INVALIDATE_USERINFO
 })
 

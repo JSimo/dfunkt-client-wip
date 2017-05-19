@@ -24,9 +24,11 @@ const MandateTable = ({mandates}) => (
     <TableBody>
       {mandates.filter(active).map((mandate, i) =>
         <TableRow key={mandate.title}>
-          <TableColumn>{mandate.title}</TableColumn>
+          <TableColumn>
+            <Link to={'/role/'+mandate.title}>{mandate.title} </Link>
+          </TableColumn>
           <TableColumn>{mandate.Mandates.map((m, j) =>
-              <p><Link key={mandate.title+m.User.kthid}to={"/user/" + m.User.kthid}> {m.User.first_name + ' ' +  m.User.last_name} </Link></p>
+              <p key={mandate.title+m.User.kthid}><Link to={"/user/" + m.User.kthid}> {m.User.first_name + ' ' +  m.User.last_name} </Link></p>
             )}</TableColumn>
           <TableColumn>{mandate.email}</TableColumn>
           <TableColumn>{mandate.Group.name}</TableColumn>

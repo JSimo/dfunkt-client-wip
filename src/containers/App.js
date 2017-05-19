@@ -6,6 +6,7 @@ import NavLink from '../components/NavLink';
 import Home from './Home';
 import Page1 from './Page1';
 import User from './User';
+import Roles from './Roles';
 
 const navItems = [{
   exact: true,
@@ -15,6 +16,10 @@ const navItems = [{
 }, {
   label: 'Page 1',
   to: '/page-1',
+  icon: 'bookmark',
+}, {
+  label: 'Roles',
+  to: '/roles',
   icon: 'bookmark',
 }];
 
@@ -31,6 +36,7 @@ class App extends Component {
             <Switch key={location.key}>
               <Route exact path="/" location={location} component={Home} />
               <Route path="/page-1" location={location} component={Page1} />
+              <Route path="/roles" location={location} component={Roles} />
               <Route path="/user/:kthid" location={location} component={User} />
             </Switch>
           </NavigationDrawer>

@@ -22,7 +22,9 @@ const UserMandateList = ({mandates}) => (
     <TableBody>
       {mandates.map((mandate, i) =>
         <TableRow key={mandate.title}>
-          <TableColumn>{mandate.Role.title}</TableColumn>
+          <TableColumn>
+            <Link to={'/role/'+mandate.Role.title}>{mandate.Role.title}</Link>
+          </TableColumn>
           <TableColumn>{moment(mandate.start).format('YYYY-MM-DD')}</TableColumn>
           <TableColumn>{moment(mandate.end).format('YYYY-MM-DD')}</TableColumn>
         </TableRow>
