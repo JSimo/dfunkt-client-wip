@@ -26,7 +26,7 @@ const MandateTable = ({mandates}) => (
         <TableRow key={mandate.title}>
           <TableColumn>{mandate.title}</TableColumn>
           <TableColumn>{mandate.Mandates.map((m, j) =>
-              <Link key={mandate.title+m.User.kthid}to={"/user/" + m.User.kthid}> {m.User.first_name + ' ' +  m.User.last_name} </Link>
+              <p><Link key={mandate.title+m.User.kthid}to={"/user/" + m.User.kthid}> {m.User.first_name + ' ' +  m.User.last_name} </Link></p>
             )}</TableColumn>
           <TableColumn>{mandate.email}</TableColumn>
           <TableColumn>{mandate.Group.name}</TableColumn>

@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import { fetchMandatesIfNeeded } from '../actions';
+import { fetchMandatesIfNeeded } from '../actions/mandate';
 import { connect } from 'react-redux'
 import MandateTable from '../components/MandateTable';
 
@@ -28,9 +28,6 @@ class Home extends Component {
         <div className="home-header">
           <h2>Welcome to dfunkt</h2>
         </div>
-        <p className="home-intro">
-          TODO: system description
-        </p>
         {isEmpty
           ? (isFetching ? <img className="spin-logo" alt="loading" src={skold}/> : <h2>Empty.</h2>)
           : <div style={{ opacity: isFetching ? 0.5 : 1 }}>

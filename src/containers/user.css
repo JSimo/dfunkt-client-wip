@@ -1,0 +1,22 @@
+.home {
+  text-align: center; }
+
+.home-header {
+  background-color: #ff6e40;
+  height: 70px;
+  padding: 20px; }
+  .home-header h2 {
+    color: #fff; }
+
+.home-intro {
+  font-size: large; }
+
+img.spin-logo {
+  animation: logo-spin infinite 5s ease-in-out;
+  height: 80px; }
+
+@keyframes logo-spin {
+  from {
+    transform: rotate(0deg); }
+  to {
+    transform: rotate(360deg); } }
