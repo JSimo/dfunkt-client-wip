@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import List from 'react-md/lib/Lists/List';
 import ListItem from 'react-md/lib/Lists/ListItem';
+import { Link } from 'react-router-dom';
 
 import Card from 'react-md/lib/Cards/Card';
 import CardTitle from 'react-md/lib/Cards/CardTitle';
@@ -20,11 +21,12 @@ const RoleList = ({roles}) => (
       <CardText>
         <List>
           {roles.filter(drek).filter(active).map((role, i) =>
-            <ListItem
-              key={role.title}
-              primaryText={role.title}
-              secondaryText={role.email}
-            />
+            <Link to={'/role/'+role.identifier} key={role.title}>
+              <ListItem
+                primaryText={role.title}
+                secondaryText={role.email}
+              />
+            </Link>
           )}
         </List>
       </CardText>
@@ -34,11 +36,12 @@ const RoleList = ({roles}) => (
       <CardText>
         <List>
           {roles.filter(dfunk).filter(active).map((role, i) =>
-            <ListItem
-              key={role.title}
-              primaryText={role.title}
-              secondaryText={role.email}
-            />
+            <Link to={'/role/'+role.identifier} key={role.title}>
+              <ListItem
+                primaryText={role.title}
+                secondaryText={role.email}
+              />
+            </Link>
           )}
         </List>
       </CardText>
@@ -48,11 +51,12 @@ const RoleList = ({roles}) => (
       <CardText>
         <List>
           {roles.filter(proj).filter(active).map((role, i) =>
-            <ListItem
-              key={role.title}
-              primaryText={role.title}
-              secondaryText={role.email}
-            />
+            <Link to={'/role/'+role.identifier} key={role.title}>
+              <ListItem
+                primaryText={role.title}
+                secondaryText={role.email}
+              />
+            </Link>
           )}
         </List>
       </CardText>
@@ -62,11 +66,12 @@ const RoleList = ({roles}) => (
       <CardText>
         <List>
           {roles.filter((r) => !active(r)).map((role, i) =>
-            <ListItem
-              key={role.title}
-              primaryText={role.title}
-              secondaryText={role.email}
-            />
+            <Link to={'/role/'+role.identifier} key={role.title}>
+              <ListItem
+                primaryText={role.title}
+                secondaryText={role.email}
+              />
+            </Link>
           )}
         </List>
       </CardText>
