@@ -5,7 +5,6 @@ import Home from './Home';
 import User from './User';
 import Roles from './Roles';
 import Header from '../components/Header';
-import './app.css';
 
 class App extends Component {
   render() {
@@ -19,6 +18,7 @@ class App extends Component {
                 <Route exact path="/" location={location} component={Home} />
                 <Route path="/roles" location={location} component={Roles} />
                 <Route path="/user/:kthid" location={location} component={User} />
+                <Route path="/role/:roleid" location={location} component={Roles} />
               </Switch>
             </div>
           </div>
