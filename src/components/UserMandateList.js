@@ -2,35 +2,29 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import moment from 'moment';
 
-import DataTable from 'react-md/lib/DataTables/DataTable';
-import TableHeader from 'react-md/lib/DataTables/TableHeader';
-import TableBody from 'react-md/lib/DataTables/TableBody';
-import TableRow from 'react-md/lib/DataTables/TableRow';
-import TableColumn from 'react-md/lib/DataTables/TableColumn';
-
 import { Link } from 'react-router-dom';
 
 const UserMandateList = ({mandates}) => (
-  <DataTable plain>
-    <TableHeader>
-      <TableRow>
-        <TableColumn>Title</TableColumn>
-        <TableColumn>Start</TableColumn>
-        <TableColumn>End</TableColumn>
-      </TableRow>
-    </TableHeader>
-    <TableBody>
+  <table classname="table table-striped">
+    <thead>
+      <tr>
+        <th>Title</th>
+        <th>Start</th>
+        <th>End</th>
+      </tr>
+    </thead>
+    <tbody>
       {mandates.map((mandate, i) =>
-        <TableRow key={mandate.title}>
-          <TableColumn>
-            <Link to={'/role/'+mandate.Role.title}>{mandate.Role.title}</Link>
-          </TableColumn>
-          <TableColumn>{moment(mandate.start).format('YYYY-MM-DD')}</TableColumn>
-          <TableColumn>{moment(mandate.end).format('YYYY-MM-DD')}</TableColumn>
-        </TableRow>
+        <tr key={mandate.title}>
+          <td>
+            <Link to={'/role/'+mandate.Role.identifier}>{mandate.Role.title}</Link>
+          </td>
+          <td>{moment(mandate.start).format('YYYY-MM-DD')}</td>
+          <td>{moment(mandate.end).format('YYYY-MM-DD')}</td>
+        </tr>
       )}
-    </TableBody>
-  </DataTable>
+    </tbody>
+  </table>
 )
 
 UserMandateList.propTypes = {

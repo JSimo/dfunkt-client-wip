@@ -4,6 +4,7 @@
   "private": true,
   "description": "An example usage of react-md and create-react-app.",
   "dependencies": {
+    "methone": "file:///home/jsimo/git/Methone/methone-1.0.0.tgz",
     "moment": "^2.18.1",
     "node-sass": "^4.5.2",
     "npm-run-all": "^4.0.2",
@@ -12,13 +13,11 @@
     "react-addons-css-transition-group": "^15.5.2",
     "react-addons-transition-group": "^15.5.2",
     "react-dom": "^15.5.4",
-    "react-md": "^1.0.13",
     "react-redux": "^5.0.4",
     "react-router-dom": "^4.1.1",
     "redux": "^3.6.0",
     "redux-logger": "^3.0.6",
     "redux-thunk": "^2.2.0",
-    "superagent": "^3.5.2",
     "webfontloader": "^1.6.27",
     "whatwg-fetch": "^2.0.3"
   },

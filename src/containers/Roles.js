@@ -25,7 +25,6 @@ class Roles extends Component {
     const isEmpty = roles.length === 0
     return (
       <div className="roles">
-        <h1> Roles </h1>
         {isEmpty
           ? (isFetching ? <img className="spin-logo" alt="loading" src={skold}/> : <h2>Empty.</h2>)
           : <div style={{ opacity: isFetching ? 0.5 : 1 }}>

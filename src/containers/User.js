@@ -6,7 +6,6 @@ import PropTypes from 'prop-types';
 import UserInfo from '../components/UserInfo';
 
 import skold from '../../public/skold.png';
-import './user.css';
 
 class User extends Component {
   static propTypes = {

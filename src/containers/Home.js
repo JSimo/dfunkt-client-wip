@@ -4,7 +4,6 @@ import { fetchMandatesIfNeeded } from '../actions/mandate';
 import { connect } from 'react-redux'
 import MandateTable from '../components/MandateTable';
 
-import './home.css';
 import skold from '../../public/skold.png';
 
 class Home extends Component {

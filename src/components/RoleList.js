@@ -1,81 +1,41 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import List from 'react-md/lib/Lists/List';
-import ListItem from 'react-md/lib/Lists/ListItem';
-import { Link } from 'react-router-dom';
-
-import Card from 'react-md/lib/Cards/Card';
-import CardTitle from 'react-md/lib/Cards/CardTitle';
-import CardText from 'react-md/lib/Cards/CardText';
-
+import GroupList from './GroupList';
 
 const drek = r => r.Group.identifier === 'drek';
 const dfunk = r => r.Group.identifier === 'dfunk';
 const proj = r => r.Group.identifier === 'proj';
 const active = r => r.active === true;
 
+
 const RoleList = ({roles}) => (
-  <div className="md-grid">
-    <Card className="md-cell md-paper md-paper--1">
-      <CardTitle title="D-rektoratet" subtitle="Datasektionens styrelse" />
-      <CardText>
-        <List>
-          {roles.filter(drek).filter(active).map((role, i) =>
-            <Link to={'/role/'+role.identifier} key={role.title}>
-              <ListItem
-                primaryText={role.title}
-                secondaryText={role.email}
-              />
-            </Link>
-          )}
-        </List>
-      </CardText>
-    </Card>
-    <Card className="md-cell md-paper md-paper--1">
-      <CardTitle title="dfunk" subtitle="Datasektionens funktionärer" />
-      <CardText>
-        <List>
-          {roles.filter(dfunk).filter(active).map((role, i) =>
-            <Link to={'/role/'+role.identifier} key={role.title}>
-              <ListItem
-                primaryText={role.title}
-                secondaryText={role.email}
-              />
-            </Link>
-          )}
-        </List>
-      </CardText>
-    </Card>
-    <Card className="md-cell md-paper md-paper--1">
-      <CardTitle title="Projektledare" subtitle="Datasektionens projektledare" />
-      <CardText>
-        <List>
-          {roles.filter(proj).filter(active).map((role, i) =>
-            <Link to={'/role/'+role.identifier} key={role.title}>
-              <ListItem
-                primaryText={role.title}
-                secondaryText={role.email}
-              />
-            </Link>
-          )}
-        </List>
-      </CardText>
-    </Card>
-    <Card className="md-cell md-paper md-paper--1">
-      <CardTitle title="Gammalt" subtitle="Inactive and old posts" />
-      <CardText>
-        <List>
-          {roles.filter((r) => !active(r)).map((role, i) =>
-            <Link to={'/role/'+role.identifier} key={role.title}>
-              <ListItem
-                primaryText={role.title}
-                secondaryText={role.email}
-              />
-            </Link>
-          )}
-        </List>
-      </CardText>
-    </Card>
+  <div className="container">
+    <div className="row">
+      <div className="col-sm-3">
+        <GroupList
+          title="D-rektoratet"
+          description="Datasektionens styrelse"
+          roles={roles.filter(active).filter(drek)} />
+      </div>
+      <div className="col-sm-3">
+        <GroupList
+          title="Dfunkt"
+          description="Datasektionens funktionärer"
+          roles={roles.filter(active).filter(dfunk)} />
+      </div>
+      <div className="col-sm-3">
+        <GroupList
+          title="Projektledare"
+          description="Datasektionens projektledare"
+          roles={roles.filter(active).filter(proj)} />
+      </div>
+      <div className="col-sm-3">
+        <GroupList
+          title="Inaktiva"
+          description="Gamla poster på sektionen"
+          roles={roles.filter((r) => !active(r))} />
+      </div>
+    </div>
   </div>
 )
 

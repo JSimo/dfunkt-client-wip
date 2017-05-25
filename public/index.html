@@ -4,6 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="shortcut icon" href="%PUBLIC_URL%/favicon.ico">
+    <!--<link rel="stylesheet" href="//aurora.datasektionen.se/" type="text/css">-->
     <!--
       Notice the use of %PUBLIC_URL% in the tag above.
       It will be replaced with the URL of the `public` folder during the build.
@@ -13,10 +14,27 @@
       work correctly both with client-side routing and a non-root public URL.
       Learn how to configure a non-root public URL by running `npm run build`.
     -->
-    <title>React App</title>
+    <title>dfunkt</title>
+    <script>
+      window.methone_conf = {
+        system_name: "dfunkt",
+        color_scheme: "deep_orange",
+        login_text: "login",
+        login_link: "/login",
+        links: [
+            { str: "Roller", href: "/roles" },
+            { str: "Bar", href: "/bar" },
+            { str: "Foo", href: "/foo" },
+        ]
+      }
+    </script>
   </head>
   <body>
-    <div id="root"></div>
+    <div id="methone-container-replace">
+      <nav>Loading... does this message not dissapear? Then the toolbar is down...</nav>
+    </div>
+    <script async src="//methone.datasektionen.se/bar.js"></script>
+    <div id="application" class="deep-orange"></div>
     <!--
       This HTML file is a template.
       If you open it directly in the browser, you will see an empty page.

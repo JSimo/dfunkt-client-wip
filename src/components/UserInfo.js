@@ -1,20 +1,16 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import Card from 'react-md/lib/Cards/Card';
-import CardTitle from 'react-md/lib/Cards/CardTitle';
-import CardText from 'react-md/lib/Cards/CardText';
-//import CardActions from 'react-md/lib/Cards/CardActions';
-
 import UserMandateList from './UserMandateList';
 
 const UserInfo = ({info}) => (
-  <Card className="user-card">
-    <CardTitle title={info.user.first_name + ' ' + info.user.last_name} subtitle={info.user.kthid + '@kth.se'} />
-    <CardText className="info-block">
-      <UserMandateList mandates={info.mandates} />
-    </CardText>
-  </Card>
+  <div className="card">
+    <div className="card-block">
+      <h2 className="card-title">{info.user.first_name + ' ' + info.user.last_name}</h2>
+      <h4 className="card-subtitle mb-2 text-muted">{info.user.kthid + '@kth.se'}</h4>
+    </div>
+    <UserMandateList mandates={info.mandates} />
+  </div>
 )
 
 
