@@ -4,6 +4,7 @@ import { connect } from 'react-redux'
 import PropTypes from 'prop-types';
 
 import skold from '../../public/skold.png';
+import { default as RoleInfoComponent} from '../components/RoleInfo';
 
 class RoleInfo extends Component {
   static propTypes = {
@@ -26,7 +27,7 @@ class RoleInfo extends Component {
         {isEmpty
           ? (isFetching ? <img className="spin-logo" alt="loading" src={skold}/> : <h2>404.</h2>)
           : <div style={{ opacity: isFetching ? 0.5 : 1 }}>
-              <p> {JSON.stringify(roleinfo)} </p>
+              <RoleInfoComponent roleinfo={roleinfo} />
             </div>
         }
       </div>
