@@ -21,7 +21,7 @@ class User extends Component {
   }
 
   render() {
-    const { info, isFetching /*, lastUpdated*/ } = this.props
+    const { info, isFetching } = this.props
     const isEmpty = Object.keys(info).length === 0
     return (
       <div>

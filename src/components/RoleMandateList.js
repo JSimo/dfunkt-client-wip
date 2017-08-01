@@ -15,7 +15,7 @@ const RoleMandateList = ({mandates}) => (
     </thead>
     <tbody>
       {mandates.map((mandate, i) =>
-        <tr key={mandate.title + mandate.start + mandate.end}>
+        <tr key={mandate.title + mandate.start + mandate.User.kthid}>
           <td>
             <Link to={'/user/'+mandate.User.kthid}>{mandate.User.first_name + ' ' + mandate.User.last_name}</Link>
           </td>

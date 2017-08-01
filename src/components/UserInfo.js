@@ -6,8 +6,8 @@ import UserMandateList from './UserMandateList';
 const UserInfo = ({info}) => (
   <div className="card">
     <div className="card-block">
-      <h2 className="card-title">{info.user.first_name + ' ' + info.user.last_name}</h2>
-      <h4 className="card-subtitle mb-2 text-muted">{info.user.kthid + '@kth.se'}</h4>
+      <h1 className="card-title">{info.user.first_name + ' ' + info.user.last_name}</h1>
+      <h3 className="card-subtitle mb-2 text-muted">{info.user.kthid + '@kth.se'}</h3>
     </div>
     <UserMandateList mandates={info.mandates} />
   </div>

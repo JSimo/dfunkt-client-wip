@@ -18,13 +18,13 @@
     <script>
       window.methone_conf = {
         system_name: "dfunkt",
-        color_scheme: "deep_orange",
+        color_scheme: "deep_purple",
         login_text: "login",
-        login_link: "/login",
+        login_href: "https:/login2.datasektionen.se/login?callback=" + window.location.origin + "%2F%23%2Flogin%2F%0A",
         links: [
-            { str: "Roller", href: "/roles" },
-            { str: "Bar", href: "/bar" },
-            { str: "Foo", href: "/foo" },
+            { str: "Roller", href: "/#/roles" },
+            { str: "Bar", href: "/#/bar" },
+            { str: "Foo", href: "/#/foo" },
         ]
       }
     </script>
@@ -34,7 +34,7 @@
       <nav>Loading... does this message not dissapear? Then the toolbar is down...</nav>
     </div>
     <script async src="//methone.datasektionen.se/bar.js"></script>
-    <div id="application" class="deep-orange"></div>
+    <div id="application" class="deep-purple"></div>
     <!--
       This HTML file is a template.
       If you open it directly in the browser, you will see an empty page.
